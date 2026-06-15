@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameSphere – Your Gaming Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- ====================== Header ====================== -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <h1 class="logo"><a href="#">GameSphere</a></h1>
+            <nav class="nav" aria-label="Primary Navigation">
+                <button class="nav-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Toggle menu">
+                    <span class="burger"></span>
+                </button>
+                <ul id="primary-menu" class="nav-list">
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#featured">Featured</a></li>
+                    <li><a href="#community">Community</a></li>
+                    <li><button id="theme-switcher" aria-label="Toggle light/dark mode">🌙</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ====================== Hero ====================== -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h2>Level Up Your Play</h2>
+            <p>Latest news, reviews, and community talks – all in one place.</p>
+            <a href="#news" class="btn-primary">Explore News</a>
+        </div>
+    </section>
+
+    <main class="site-main">
+        <!-- ========== Latest News ========== -->
+        <section id="news" class="section news">
+            <div class="container">
+                <h2 class="section-title">Latest News</h2>
+                <div class="news-grid">
+                    <article class="news-card">
+                        <img src="https://source.unsplash.com/featured/400x225?gaming" alt="Gaming screenshot">
+                        <div class="news-body">
+                            <h3>Epic Quest Updates Released</h3>
+                            <p>Discover the new realms, characters, and gear added in the latest patch.</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <img src="https://source.unsplash.com/featured/400x225?eSports" alt="eSports arena">
+                        <div class="news-body">
+                            <h3>Championship Finals This Weekend</h3>
+                            <p>The top teams clash for the grand prize. Stream live and join the discussion.</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <img src="https://source.unsplash.com/featured/400x225?retro-gaming" alt="Retro console">
+                        <div class="news-body">
+                            <h3>Retro Gaming Night: Vote for Classics</h3>
+                            <p>Help us pick the retro titles that will be streamed live next month.</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== Featured Games ========== -->
+        <section id="featured" class="section featured">
+            <div class="container">
+                <h2 class="section-title">Featured Games</h2>
+                <div class="featured-grid">
+                    <article class="game-card">
+                        <img src="https://source.unsplash.com/featured/300x180?fantasy-game" alt="Fantasy game cover">
+                        <h3>Realm of Legends</h3>
+                        <p>Embark on a massive open‑world adventure with breathtaking visuals.</p>
+                        <a href="#" class="btn-outline">Learn More</a>
+                    </article>
+                    <article class="game-card">
+                        <img src="https://source.unsplash.com/featured/300x180?shooter-game" alt="Shooter game cover">
+                        <h3>Starfire Assault</h3>
+                        <p>Fast‑paced multiplayer shooter with futuristic weapons.</p>
+                        <a href="#" class="btn-outline">Learn More</a>
+                    </article>
+                    <article class="game-card">
+                        <img src="https://source.unsplash.com/featured/300x180?indie-game" alt="Indie game cover">
+                        <h3>Puzzle Quest</h3>
+                        <p>A mind‑bending indie puzzle platformer that challenges logic.</p>
+                        <a href="#" class="btn-outline">Learn More</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== Community ========== -->
+        <section id="community" class="section community">
+            <div class="container">
+                <h2 class="section-title">Join the Community</h2>
+                <p class="section-intro">
+                    Share your passion, find teammates, and stay updated with GameSphere forums, Discord, and social media.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-btn" aria-label="Discord">
+                        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M20.317 4.369a19.791 19.791 0 0 0-4.885-1.525l-.224.404c1.884.433 2.6 1.17 2.6 1.17c-.552-.363-1.084-.604-1.593-.754c-2.406-.785-4.693-.789-6.99-.003c-.509.151-1.043.394-1.595.761c0 0 1.407-.88 2.96-1.211l-.225-.403a19.781 19.781 0 0 0-4.885 1.525c-4.11 5.739-5.225 11.433-4.629 17.062a19.842 19.842 0 0 0 6.093 2.942l.457-.632c-.991-.468-1.957-1.076-2.886-1.798c.243.02.484.03.73.03c2.693 0 5.33-.783 7.605-2.225c2.274 1.44 4.912 2.222 7.605 2.222c.245 0 .486-.01 .729-.03c-.928.723-1.894 1.33-2.885 1.798l.456.632c2.742-.794 5.37-2.299 6.094-2.943c.596-5.629-.519-11.323-4.629-17.061zM8.239 15.8c-1.144 0-2.092-1.089-2.092-2.436 0-1.348.925-2.436 2.092-2.436c1.166 0 2.093 1.088 2.093 2.436 0 1.347-.927 2.436-2.093 2.436zm7.522 0c-1.144 0-2.093-1.089-2.093-2.436 0-1.348.926-2.436 2.093-2.436c1.166 0 2.092 1.088 2.092 2.436 0 1.347-.926 2.436-2.092 2.436z"/></svg>
+                    </a>
+                    <a href="#" class="social-btn" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69a4.28 4.28 0 0 0 1.88-2.37c-.81.48-1.7.83-2.66 1.02a4.25 4.25 0 0 0-7.25 3.88c-3.53-.18-6.66-1.87-8.76-4.44a4.23 4.23 0 0 0-.58 2.14c0 1.48.75 2.79 1.9 3.55a4.21 4.21 0 0 1-1.92-.53v.05c0 2.07 1.48 3.79 3.45 4.18-.36.1-.74.15-1.13.15-.28 0-.54-.03-.8-.07.54 1.66 2.1 2.88 3.94 2.91a8.53 8.53 0 0 1-5.28 1.82c-.34 0-.68-.02-1.01-.06a12.07 12.07 0 0 0 6.55 1.92c7.86 0 12.17-6.5 12.17-12.13 0-.18-.01-.35-.02-.53A8.71 8.71 0 0 0 24 4.56a8.43 8.43 0 0 1-2.54.7z"/></svg>
+                    </a>
+                    <a href="#" class="social-btn" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M23.498 6.186a2.998 2.998 0 0 0-2.112-2.124C19.424 3.5 12 3.5 12 3.5s-7.424 0-9.386.562a3 3 0 0 0-2.111 2.124C0 8.31 0 12 0 12s0 3.69.503 5.814a2.998 2.998 0 0 0 2.112 2.124C4.577 20.5 12 20.5 12 20.5s7.424 0 9.386-.562a3 3 0 0 0 2.112-2.124C24 15.69 24 12 24 12s0-3.69-.502-5.814zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ====================== Footer ====================== -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; <span id="year"></span> GameSphere. All rights reserved.</p>
+            <nav class="footer-nav" aria-label="Footer Navigation">
+                <a href="#news">News</a>
+                <a href="#featured">Featured</a>
+                <a href="#community">Community</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
