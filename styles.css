@@ -1,0 +1,469 @@
+/* ==============================
+   GameSphere – Dark Themed CSS
+   Uses CSS custom properties for theming.
+   Mobile‑first responsive layout.
+   ============================== */
+
+/* ---------- Root & Theme Variables ---------- */
+:root {
+    --color-background: #0d1117;
+    --color-surface: #161b22;
+    --color-primary: #58a6ff;
+    --color-primary-dark: #1f6feb;
+    --color-muted: #8b949e;
+    --color-text: #c9d1d9;
+    --color-text-muted: #8b949e;
+    --color-border: #30363d;
+    --transition-speed: 0.3s;
+}
+
+/* Light mode overrides – toggled via .light-theme class on <html> */
+html.light-theme {
+    --color-background: #f6f8fa;
+    --color-surface: #ffffff;
+    --color-primary: #0366d6;
+    --color-primary-dark: #0350a4;
+    --color-muted: #6a737d;
+    --color-text: #24292e;
+    --color-text-muted: #586069;
+    --color-border: #d1d5da;
+}
+
+/* ---------- Global Reset & Base ---------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+body {
+    line-height: 1.6;
+}
+
+/* ---------- Utility Classes ---------- */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+}
+
+/* Logo */
+.logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+/* Navigation */
+.nav {
+    position: relative;
+}
+
+/* Mobile toggle button */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.burger,
+.burger::before,
+.burger::after {
+    content: "";
+    display: block;
+    background: var(--color-text);
+    height: 2px;
+    border-radius: 2px;
+    transition: transform var(--transition-speed) ease;
+}
+
+.burger {
+    width: 1.5rem;
+    position: relative;
+    top: 0.5rem;
+}
+
+.burger::before {
+    width: 100%;
+    transform: translateY(-0.5rem);
+}
+
+.burger::after {
+    width: 100%;
+    transform: translateY(0.5rem);
+}
+
+/* Nav list */
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+/* Links */
+.nav-list a,
+.nav-list button {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color var(--transition-speed);
+}
+
+.nav-list a:hover,
+.nav-list button:hover {
+    color: var(--color-primary);
+}
+
+/* Theme switcher button */
+#theme-switcher {
+    font-size: 1.2rem;
+}
+
+/* ---------- Hero Section ---------- */
+.hero {
+    position: relative;
+    background-image: url('https://source.unsplash.com/featured/1600x900?gaming');
+    background-size: cover;
+    background-position: center;
+    color: var(--color-surface);
+    display: flex;
+    align-items: center;
+    height: 60vh;
+    min-height: 350px;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(13,17,23,0.6);
+    transition: background var(--transition-speed);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 600px;
+    text-align: left;
+    margin-left: 2rem;
+}
+
+.hero h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.hero p {
+    margin-bottom: 1.5rem;
+    color: #e0e2e5;
+    font-size: 1.125rem;
+}
+
+/* Primary button */
+.btn-primary {
+    display: inline-block;
+    background: var(--color-primary);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background var(--transition-speed);
+}
+
+.btn-primary:hover {
+    background: var(--color-primary-dark);
+}
+
+/* ---------- Sections ----------
+   General section styling */
+.section {
+    padding: 3rem 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--color-primary);
+}
+
+/* ---------- News Grid ---------- */
+.news-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.news-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.6rem;
+    overflow: hidden;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.news-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.news-body {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-body h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+    color: var(--color-text);
+}
+
+.news-body p {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+}
+
+.read-more {
+    align-self: flex-start;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-speed);
+}
+
+.read-more:hover {
+    color: var(--color-primary-dark);
+}
+
+.news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* ---------- Featured Games ---------- */
+.featured-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.game-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.6rem;
+    width: 280px;
+    text-align: center;
+    padding: 1rem;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.game-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 0.4rem;
+    margin-bottom: 0.75rem;
+}
+
+.game-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+    font-size: 1.2rem;
+}
+
+.game-card p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+}
+
+/* Outline button */
+.btn-outline {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--color-primary);
+    border-radius: 0.4rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background var(--transition-speed), color var(--transition-speed);
+}
+
+.btn-outline:hover {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+/* Card hover */
+.game-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* ---------- Community Section ---------- */
+.community .section-intro {
+    max-width: 720px;
+    margin: 0 auto 2rem;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: var(--color-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    transition: background var(--transition-speed), color var(--transition-speed);
+    text-decoration: none;
+    font-size: 1.4rem;
+}
+
+.social-btn:hover {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    background: var(--color-surface);
+    color: var(--color-text-muted);
+    border-top: 1px solid var(--color-border);
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.footer-nav a {
+    margin: 0 0.6rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+.footer-nav a:hover {
+    color: var(--color-primary);
+}
+
+/* ---------- Responsive Breakpoints ---------- */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-list {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: var(--color-surface);
+        flex-direction: column;
+        width: 200px;
+        padding: 1rem;
+        border: 1px solid var(--color-border);
+        border-radius: 0.4rem;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform var(--transition-speed) ease;
+        overflow: hidden;
+    }
+
+    .nav-list.open {
+        transform: scaleY(1);
+    }
+
+    .hero-content {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+    }
+}
+
+/* ---------- Animations ----------
+   Subtle fade-in on scroll using IntersectionObserver (handled in JS) */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity var(--transition-speed) ease-out, transform var(--transition-speed) ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------- Accessibility ----------
+   Focus outline for keyboard navigation */
+a:focus,
+button:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* ---------- Misc ----------
+   Styling the year placeholder */
+#year {
+    font-weight: 600;
+}
+
+/* End of styles.css */
